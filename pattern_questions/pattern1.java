@@ -17,3 +17,11 @@ public class pattern1 {
         }
     }
 }
+
+
+//   output
+
+//  * * * * *
+//  *       *   
+//  *       *
+//  * * * * *   

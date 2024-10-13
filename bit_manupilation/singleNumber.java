@@ -44,7 +44,7 @@ public class singleNumber {
     public static int solution(int nums[]) {
         int uniqueNumber = 0;
         for (int i = 0; i < nums.length; i++) {
-            uniqueNumber = uniqueNumber ^ nums[i];
+            uniqueNumber = uniqueNumber ^ nums[i]; // we do and operator in order to make sure that the repeated numbers when did and with the 0 will result in 0 but not in case of the number which is not repeated in the array
         }
         return uniqueNumber;
     }

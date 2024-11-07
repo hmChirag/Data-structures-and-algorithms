@@ -37,6 +37,7 @@ public class nextGreaterTwo {
         for(int i=0;i<nums.length;i++){
             boolean found=false;
             for(int j=1;j<nums.length;j++){
+                //circular array condition i+j % n
                 if(nums[(i+j)% n]>nums[i]){
                     res[i]=nums[(i+j)% n];
                     found=true;

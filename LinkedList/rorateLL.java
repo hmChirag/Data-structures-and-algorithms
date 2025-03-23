@@ -29,18 +29,29 @@ The number of nodes in the list is in the range [0, 500].
 package LinkedList;
 
 public class rorateLL {
+    /**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
     public ListNode rotateRight(ListNode head, int k) {
         ListNode temp=head;
-        ListNode dummy=head;
         int len=1;
+         if(head==null || head.next==null|| k ==0){
+            return head;
+        }
+
         while(temp.next!=null){
             temp=temp.next;
             len++;
         }
-        if(head==null || head.next==null|| k ==0){
-            return head;
-        }
-
+       
         k=k % len;
         if(k==0){
             return head;
@@ -49,14 +60,16 @@ public class rorateLL {
         for(int i=0;i<len-k-1;i++){
             newTail=newTail.next;
         }
-
+        //finding the bisection point and assigning the new tail to null
         ListNode newHead=newTail.next;
         newTail.next=null;
-
+        
+        //connecting the original tail node to the head to form the desired LL
         temp.next=head;
 
         return newHead;
     }
+}
     
     public static void main(String[] args) {
         

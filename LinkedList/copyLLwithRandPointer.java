@@ -46,6 +46,15 @@ Constraints:
 Node.random is null or is pointing to some node in the linked list.
  */
 
+
+
+
+
+
+
+ //https://youtu.be/_GBo_CgST1M?si=V0aPbEmF11vrNsX1   logic explaination
+
+
 package LinkedList;
 
 import org.w3c.dom.Node;

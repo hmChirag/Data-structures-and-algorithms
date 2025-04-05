@@ -75,17 +75,17 @@ public class inorderTraversal {
 
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> list=new ArrayList<>();
-        inorderTraversal(root,list);
+        inorderTraversalHelper(root,list);
         return list;
     }
-    public void inorderTraversal(TreeNode root,List<Integer> list){
+    public void inorderTraversalHelper(TreeNode root,List<Integer> list){
         if(root==null){
             return;
         }
         //recursive call for inorder traversal
-        inorderTraversal(root.left,list);
+        inorderTraversalHelper(root.left,list);
         list.add(root.val);
-        inorderTraversal(root.right,list);
+        inorderTraversalHelper(root.right,list);
     }
  
     

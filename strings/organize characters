@@ -1,0 +1,95 @@
+Problem Statement
+
+
+
+Manoj is working as a ticket checker at Satyam Cinemas. Due to overcrowding, everyone is asked to form a queue. so people who came together got separated in the queue. People who come together are considered to be a single group. Always assume that the person of each group who is standing first in the queue holds the ticket. You have to check the ticket of each person and make sure all the members of his group enter the screen along with him.
+
+
+
+Example
+
+Sample Input 1
+
+abcaaubcc
+
+Sample Output 1
+
+aaabbcccu
+
+Explanation
+
+Imagine "abcaaubcc" as a queue, and each alphabet represents a person standing in a queue. People of the same group are represented using the same alphabet. The first person you will be checking is "a". You have to allow all the people in group "a". Then the list will be like this: "aaabcubcc". The next person you will be checking is "b" Now the list will be updated as "aaabbcucc".  After checking c list, it will be "aaabbcccu". Then after checking "u" the list will be the same as "aaabbcccu"
+
+
+
+Sample Input 2
+
+zaynzaakony
+
+Sample Output 2
+
+zzaaayynnko
+
+Explanation
+
+The output for the given test case will be "zzaaayynnko". It groups the characters 'z', 'z', 'a', 'a', 'a', 'y', 'y', 'n', 'n', 'k', 'o' together, which represent the grouped people standing in the queue.
+
+
+
+Note: People of the same group will be represented using the same alphabetic character. Also, only lowercase letters will be used.
+
+Input format :
+The first line of input consists of a string queue, representing the people standing in the queue. Each character represents a person, and people in the same group are represented by the same character.
+
+Output format :
+The output prints the characters in the order they would enter the hall after grouping all people of the same group together, maintaining their original order of appearance.
+
+
+
+Refer to the sample output for the formatting specifications.
+
+Code constraints :
+The string contains only lowercase letters (a-z).
+
+1 ≤ length of string ≤ 100.
+
+Sample test cases :
+Input 1 :
+abcaaubcc
+Output 1 :
+aaabbcccu
+Input 2 :
+zaynzaakony
+Output 2 :
+zzaaayynnko
+
+
+
+
+CODE:
+
+
+
+// You are using Java
+import java.util.*;
+class main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        StringBuilder result=new StringBuilder();
+        boolean[] visited=new boolean[26];
+        for(int i=0;i<s.length();i++){
+            char ch=s.charAt(i);
+            if(!visited[ch-'a']){
+                for(int j=0;j<s.length();j++){
+                    if(s.charAt(j)==ch){
+                        result.append(ch);
+                    }
+                }
+                visited[ch-'a']=true;
+            }
+        }
+        System.out.println(result.toString());
+        
+    }
+}
